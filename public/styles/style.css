@@ -9,6 +9,25 @@
   color: GoldenRod;
   text-shadow: 2px 2px black;
 }
-img{
-
+body {
+background-image: url('https://ak8.picdn.net/shutterstock/videos/8476261/thumb/8.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+img {
+width: 5px,
+height: 5px,
+}
+.jumbotron {
+  background-image: url('https://ak8.picdn.net/shutterstock/videos/8476261/thumb/8.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgba(241, 227, 184, 1);
+}
+h1{
+  text-align: center;
+  color: rgba(241, 227, 184, 1);
+}
+#container{
+  text-align: center;
 }

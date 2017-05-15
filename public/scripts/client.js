@@ -34,6 +34,7 @@ myApp.controller('movieController', function($http){
       console.log('data ->', response.data);
       vm.movieArray = response.data.Search;
       // console.log('search results ->', movieArray.data.Search);
+      vm.searchIn = ' ';
       return vm.movieArray;
     });
 
