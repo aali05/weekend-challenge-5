@@ -1,20 +1,20 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
 // tried to config it broke my code.
 
-// myApp.config(function($routeProvider, $locationProvider) {
-// $routeProvider.when('/', {
-//   template: 'views/index.html',
-//   controller: 'movieController as mc'
-// }).when('/search', {
-//    templateUrl: 'views/index.html',
-//    controller: 'MovieController'
-// }).when('/favorite', {
-//   templateUrl: 'views/pages/favorites.html',
-//   controller: 'favController as fc'
-// }).otherwise('/');
-//
-// $locationProvider.html5Mode(true);
-// }); // end config
+myApp.config(function($routeProvider, $locationProvider) {
+$routeProvider.when('/', {
+  template: 'views/index.html',
+  controller: 'movieController as mc'
+}).when('/search', {
+   templateUrl: 'views/index.html',
+   controller: 'MovieController'
+}).when('/favorite', {
+  templateUrl: 'views/pages/favorites.html',
+  controller: 'favController as fc'
+}).otherwise('/');
+
+$locationProvider.html5Mode(true);
+}); // end config
 
 myApp.controller('movieController', function($http){
   console.log('NG');

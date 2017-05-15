@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Weekend 5</title>
   <script src="vendors/angular.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-route.min.js" charset="utf-8"></script>
   <script src="scripts/client.js" charset="utf-8"></script>
   <link rel="stylesheet" href="vendors/bootstrap.min.css">
   <link rel="stylesheet" href="styles/style.css">
@@ -30,16 +31,7 @@
 
     </div>
   </div>
-  <div ng-controller='favController as fc' ng-init=fc.getFavMovie()>
-    <div ng-repeat="fav in fc.favArray">
-      <div class="row" id="movieDiv">
-        <p><img ng-src="{{fav.poster}}" class='col-md-9' /></p>
-        <p><h4>{{fav.title}}</h4></p>
-        <p><h5>{{fav.year}}</h5></p>
-        <button type="button" name="button" class="btn" ng-click="mc.grabFavMovie(search.Title, search.Year, search.Poster, search.imdbID)">Favorite</button>
-      </div>
-    </div>
-  </div>
+
 
 </body>
 </html>

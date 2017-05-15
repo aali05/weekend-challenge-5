@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "mongoose": "^4.9.9"
+    "mongoose": "^4.9.9",
+    "route": "^0.2.5"
   }
 }
