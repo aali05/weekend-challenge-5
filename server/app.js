@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// mongo stuff
-mongoose.connect('localhost:27017/movies');
+// connect to DB
+mongoose.connect('mongodb://localhost:27017/movies');
 
 var movieSchema = mongoose.Schema({
   id: String,
@@ -30,10 +30,10 @@ app.listen(port, function(){
   console.log('server up on 3000');
 });
 
-app.get('/', function(req,res){
-  res.sendFile(path.resolve('public/views/index.html'));
-});
-
 app.post('/fav', function (req, res) {
   console.log('req.body ->', req.body);
 })
+
+app.get('/', function(req,res){
+  res.sendFile(path.resolve('public/views/index.html'));
+});

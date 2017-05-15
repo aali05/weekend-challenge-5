@@ -1,7 +1,25 @@
 var myApp = angular.module('myApp', []);
+// tried to config it broke my code.
+
+// myApp.config(function($routeProvider, $locationProvider) {
+// $routeProvider.when('/', {
+//   template: 'views/index.html',
+//   controller: 'movieController as mc'
+// }).when('/search', {
+//    templateUrl: 'views/index.html',
+//    controller: 'MovieController'
+// }).when('/favorite', {
+//   templateUrl: 'views/pages/favorites.html',
+//   controller: 'favController as fc'
+// }).otherwise('/');
+//
+// $locationProvider.html5Mode(true);
+// }); // end config
 
 myApp.controller('movieController', function($http){
   console.log('NG');
+
+
 
   // view model
   var vm = this;
@@ -21,13 +39,13 @@ myApp.controller('movieController', function($http){
 
   }; // end getMovies
 
-  vm.grabFavMovie = function () {
+  vm.grabFavMovie = function (title, year, poster, imdbId) {
     console.log('grab favs');
     var objectToSend = {
-      title: vm.movieArray.Title,
-      year: vm.movieArray.Year,
-      poster: vm.movieArray.Poster,
-      id: vm.movieArray.imdbID
+      Title: title,
+      Year: year,
+      Poster: poster,
+      imdbID: imdbId
     };
     console.log('movieToSend ->', objectToSend);
 
@@ -39,5 +57,9 @@ $http({
   console.log('this is the response', response);
 });
 }; // end grabFavMovie
+}); // end movieController
 
-}); // end controller
+myApp.controller('favController', function($http){
+  console.log('ng');
+
+}); // end favController

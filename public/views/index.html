@@ -21,7 +21,7 @@
         <img ng-src="{{search.Poster}} style="width:100%"" />
         <h3>{{search.Title}}</h3>
         <h4>{{search.Year}}</h4>
-        <button type="button" name="button" class="btn" ng-click="mc.grabFavMovie()">Favorite</button>
+        <button type="button" name="button" class="btn" ng-click="mc.grabFavMovie(search.Title, search.Year, search.Poster, search.imdbID)">Favorite</button>
       </div>
 
     </div>
