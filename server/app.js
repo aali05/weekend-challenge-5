@@ -32,8 +32,32 @@ app.listen(port, function(){
 
 app.post('/fav', function (req, res) {
   console.log('req.body ->', req.body);
-})
+  var favMovie = movies(req.body);
+  favMovie.save(function(err){
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }
+    else{
+      res.sendStatus(201);
+    };
+});
+});
+
+app.get('/fav', function(req, res){
+  console.log('in favs req.body ->', req.body);
+  movies.find(req.body,function(err,data){
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }
+    else{
+      console.log('data->', data);
+      res.send(data);
+    };
+});
+});
 
 app.get('/', function(req,res){
-  res.sendFile(path.resolve('public/views/index.html'));
+  res.sendFile(path.resolve('public/views/index.html'))
 });

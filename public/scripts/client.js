@@ -40,13 +40,12 @@ myApp.controller('movieController', function($http){
 
   }; // end getMovies
 
-  vm.grabFavMovie = function (title, year, poster, imdbId) {
+  vm.grabFavMovie = function (title, year, poster) {
     console.log('grab favs');
     var objectToSend = {
-      Title: title,
-      Year: year,
-      Poster: poster,
-      imdbID: imdbId
+      title: title,
+      year: year,
+      poster: poster
     };
     console.log('movieToSend ->', objectToSend);
 
@@ -62,5 +61,19 @@ $http({
 
 myApp.controller('favController', function($http){
   console.log('ng');
+  var vm = this;
+  vm.favArray = [];
 
+vm.getFavMovie = function () {
+  console.log('getting favs');
+  return $http({
+    method: 'GET',
+    url: '/fav'
+  }).then(function success(response) {
+    console.log('response from fav ->', response);
+    vm.favArray = response.data;
+    console.log('favArray ->', vm.favArray);
+    return vm.favArray;
+  })
+}; // end getFavMovie
 }); // end favController

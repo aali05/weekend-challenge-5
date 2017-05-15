@@ -30,6 +30,16 @@
 
     </div>
   </div>
+  <div ng-controller='favController as fc' ng-init=fc.getFavMovie()>
+    <div ng-repeat="fav in fc.favArray">
+      <div class="row" id="movieDiv">
+        <p><img ng-src="{{fav.poster}}" class='col-md-9' /></p>
+        <p><h4>{{fav.title}}</h4></p>
+        <p><h5>{{fav.year}}</h5></p>
+        <button type="button" name="button" class="btn" ng-click="mc.grabFavMovie(search.Title, search.Year, search.Poster, search.imdbID)">Favorite</button>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
