@@ -3,8 +3,8 @@ var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(function($routeProvider, $locationProvider) {
 $routeProvider.when('/', {
-  template: 'views/index.html',
-  controller: 'movieController as mc'
+  templateUrl: 'views/pages/default.html',
+  controller: 'defaultController as dc'
 }).when('/search', {
    templateUrl: 'views/index.html',
    controller: 'MovieController'
@@ -77,3 +77,7 @@ vm.getFavMovie = function () {
   })
 }; // end getFavMovie
 }); // end favController
+
+myApp.controller('defaultController', function() {
+  console.log('DefaultController loaded');
+}); // end DefaultController

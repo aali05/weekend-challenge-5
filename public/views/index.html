@@ -18,7 +18,8 @@
 
   <div id='container' ng-controller='movieController as mc'>
     <nav><a href="/favorite">Favorite</a></nav>
-    <ng-view></ng-view>
+    <nav><a href="/search">Search</a></nav>
+    <ng-view class="ng-scope"></ng-view>
     <input type="text" value="search" ng-model="mc.searchIn" placeholder="Search movie" />
     <button class="btn" ng-click="mc.getMovies()">Search Movies</button>
     <div ng-repeat="search in mc.movieArray" class='col-sm-4'>

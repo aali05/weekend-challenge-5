@@ -58,6 +58,6 @@ app.get('/fav', function(req, res){
 });
 });
 
-app.get('/', function(req,res){
+app.get('/*', function(req,res){
   res.sendFile(path.resolve('public/views/index.html'))
 });
