@@ -7,6 +7,7 @@
   <script src="scripts/client.js" charset="utf-8"></script>
   <link rel="stylesheet" href="vendors/bootstrap.min.css">
   <link rel="stylesheet" href="styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
   <base href="/">
 </head>
 <body ng-app='myApp'>
@@ -18,12 +19,12 @@
     <nav><a href="/favorite">Favorite</a></nav>
     <ng-view></ng-view>
     <input type="text" value="search" ng-model="mc.searchIn" placeholder="Search movie" />
-    <button ng-click="mc.getMovies()">Search Movies</button>
+    <button class="btn" ng-click="mc.getMovies()">Search Movies</button>
     <div ng-repeat="search in mc.movieArray" class='col-sm-4'>
       <div class="row" id="movieDiv">
-        <img ng-src="{{search.Poster}}" id='poster' />
-        <h3>{{search.Title}}</h3>
-        <h4>{{search.Year}}</h4>
+        <p><img ng-src="{{search.Poster}}" class='col-md-9' /></p>
+        <p><h4>{{search.Title}}</h4></p>
+        <p><h5>{{search.Year}}</h5></p>
         <button type="button" name="button" class="btn" ng-click="mc.grabFavMovie(search.Title, search.Year, search.Poster, search.imdbID)">Favorite</button>
       </div>
 
